@@ -4,8 +4,9 @@
   <div class="row">
     <div class="col-xs-12">
 <app-server
-[elemnt]="serverElement"
-*ngFor="let serverElement of serverElements"></app-server>
+*ngFor="let serverElement of serverElements"
+[element]="serverElement">
+</app-server>
     </div>
   </div>
 </div>
