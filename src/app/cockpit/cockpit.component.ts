@@ -14,12 +14,12 @@ export class CockpitComponent implements OnInit {
   constructor() { }
   onAddServer(nameInput: HTMLInputElement) {
     console.log(this.serverContentInput);
-    // this.serverCreated.emit({
+    this.serverCreated.emit({
       // serverName: this.newServerName,
-      // serverName: nameInput.value,
+      serverName: nameInput.value,
       // serverContent: this.newServerContent});
-      // serverContent: this.serverContentInput.nativeElement.value
-    // });
+      serverContent: this.serverContentInput.nativeElement.value
+    });
     // this.serverElements.push({
     //   type: 'server',
     //   name: this.newServerName,

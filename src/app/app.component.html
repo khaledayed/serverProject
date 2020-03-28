@@ -7,9 +7,12 @@
 <!-- <app-server
 *ngFor="let serverElement of serverElements"
 [element]="serverElement"> -->
+<button class="btn btn-primary" (click)="onChangeFist()">Change firt Element</button>
+<button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first component</button>
 <app-server
 *ngFor="let serverElement of serverElements"
-[srvElement]="serverElement">
+[srvElement]="serverElement"
+[name]="serverElement.name">
 <p>
 <strong *ngIf="serverElement.types === 'server'"
 style="color: red">{{ serverElement.content }}</strong>
