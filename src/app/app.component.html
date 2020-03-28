@@ -13,7 +13,7 @@
 *ngFor="let serverElement of serverElements"
 [srvElement]="serverElement"
 [name]="serverElement.name">
-<p>
+<p #contentParagraph>
 <strong *ngIf="serverElement.types === 'server'"
 style="color: red">{{ serverElement.content }}</strong>
 <em *ngIf="serverElement.types === 'blueprint'">

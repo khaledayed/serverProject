@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewEncapsulation,
   OnChanges, SimpleChanges, ElementRef,
   ViewChild, AfterViewInit,
   AfterContentChecked, AfterViewChecked,
-   AfterContentInit, OnDestroy } from '@angular/core';
+   AfterContentInit, OnDestroy, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -18,12 +18,14 @@ OnInit, OnChanges, AfterContentInit, AfterContentChecked,
 };
 @Input() name: string;
 @ViewChild('heading', {static:true}) header: ElementRef;
+@ContentChild('contentParagraph', {static:true}) paragraph: ElementRef;
   constructor() {
     console.log('constructor called!');
   }
   ngOnInit(): void {
     console.log('ngOnInit called!');
     console.log('Text Content', + this.header.nativeElement.textContent);
+    console.log('Text Content of paragraph: ' + this.paragraph.nativeElement.textContent)
   }
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnChanges called!');
@@ -31,6 +33,7 @@ OnInit, OnChanges, AfterContentInit, AfterContentChecked,
   }
   ngAfterContentInit(){
     console.log("ngAfterContentInit called !");
+    console.log('Text Content of paragraph: ' + this.paragraph.nativeElement.textContent)
   }
   ngAfterViewInit() {
     console.log("ngAfterViewInit called !");
