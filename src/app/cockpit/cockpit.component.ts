@@ -13,12 +13,13 @@ export class CockpitComponent implements OnInit {
   @ViewChild('serverContentInput') serverContentInput: ElementRef;
   constructor() { }
   onAddServer(nameInput: HTMLInputElement) {
-    this.serverCreated.emit({
+    console.log(this.serverContentInput);
+    // this.serverCreated.emit({
       // serverName: this.newServerName,
-      serverName: nameInput.value,
+      // serverName: nameInput.value,
       // serverContent: this.newServerContent});
-      serverContent: this.serverContentInput.nativeElement.value
-    });
+      // serverContent: this.serverContentInput.nativeElement.value
+    // });
     // this.serverElements.push({
     //   type: 'server',
     //   name: this.newServerName,

@@ -10,8 +10,12 @@
 <app-server
 *ngFor="let serverElement of serverElements"
 [srvElement]="serverElement">
-<strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
-<em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+<p>
+<strong *ngIf="serverElement.types === 'server'"
+style="color: red">{{ serverElement.content }}</strong>
+<em *ngIf="serverElement.types === 'blueprint'">
+  {{ serverElement.content }}</em>
+</p>
 </app-server>
     </div>
   </div>
