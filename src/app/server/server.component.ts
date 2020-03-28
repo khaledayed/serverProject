@@ -1,4 +1,8 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges, SimpleChanges, ElementRef, ViewChild, AfterViewInit, AfterContentChecked, AfterViewChecked, AfterContentInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation,
+  OnChanges, SimpleChanges, ElementRef,
+  ViewChild, AfterViewInit,
+  AfterContentChecked, AfterViewChecked,
+   AfterContentInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-server',
@@ -13,12 +17,13 @@ OnInit, OnChanges, AfterContentInit, AfterContentChecked,
   name: string ,types: string , content: string
 };
 @Input() name: string;
-@ViewChild('heding') header: ElementRef;
+@ViewChild('heading', {static:true}) header: ElementRef;
   constructor() {
     console.log('constructor called!');
   }
   ngOnInit(): void {
     console.log('ngOnInit called!');
+    console.log('Text Content', + this.header.nativeElement.textContent);
   }
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnChanges called!');
@@ -29,6 +34,7 @@ OnInit, OnChanges, AfterContentInit, AfterContentChecked,
   }
   ngAfterViewInit() {
     console.log("ngAfterViewInit called !");
+    console.log('Text Content', + this.header.nativeElement.textContent);
 
   }
   ngAfterContentChecked(){
